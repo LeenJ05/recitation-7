@@ -7,14 +7,17 @@ public class Recitation7 {
        int currentIndex = 0;
        int targetIndex = hopList.length -1;
 
-       while (currentIndex < targetIndex){
-           int hop = hopList[currentIndex];
-           if (hop == 0){
-               return false;
-           }
-           currentIndex += hop;
-       }
-       return currentIndex == targetIndex;
+        for (int i = 0; i <= currentIndex; i++) {
+            if (currentIndex >= targetIndex) {
+                return true;
+            }
+            if (hopList[currentIndex] == 0) {
+                return false;
+            }
+            currentIndex += hopList[currentIndex];
+        }
+
+        return false;
 
     }
 
